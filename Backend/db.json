@@ -26,6 +26,15 @@
       "published_year": 1999,
       "description": "A guide to software development best practices.",
       "cover_image": "https://example.com/pragmatic_programmer.jpg"
+    },
+    {
+      "id": 3,
+      "title": "The Pragmatic Programmer",
+      "author": "Andrew Hunt, David Thomas",
+      "genre": "Software Development",
+      "published_year": 1999,
+      "description": "A guide to software development best practices.",
+      "cover_image": "https://example.com/pragmatic_programmer.jpg"
     }
   ]
 }
