@@ -3,8 +3,8 @@
     {
       "id": 1,
       "username": "admin",
-      "email": "admin@example.com",
-      "password": "hashed_password_here",
+      "email": "admin@gmail.com",
+      "password": "admin",
       "role": "admin"
     }
   ],
@@ -14,27 +14,29 @@
       "title": "Clean Code",
       "author": "Robert C. Martin",
       "genre": "Programming",
-      "published_year": 2008,
-      "description": "A handbook of agile software craftsmanship.",
-      "cover_image": "https://example.com/clean_code.jpg"
+      "year": 2008,
+      "image": "https://djc.vn/web/image/djc.news/441/image_1024?unique=eb2a788",
+      "rating": "3"
     },
     {
       "id": 2,
       "title": "The Pragmatic Programmer",
       "author": "Andrew Hunt, David Thomas",
       "genre": "Software Development",
-      "published_year": 1999,
+      "year": 1999,
       "description": "A guide to software development best practices.",
-      "cover_image": "https://example.com/pragmatic_programmer.jpg"
+      "image": "https://example.com/pragmatic_programmer.jpg",
+      "rating": "5"
     },
     {
       "id": 3,
       "title": "The Pragmatic Programmer",
       "author": "Andrew Hunt, David Thomas",
       "genre": "Software Development",
-      "published_year": 1999,
+      "year": 1999,
       "description": "A guide to software development best practices.",
-      "cover_image": "https://example.com/pragmatic_programmer.jpg"
+      "image": "https://example.com/pragmatic_programmer.jpg",
+      "rating": "5"
     }
   ]
 }
