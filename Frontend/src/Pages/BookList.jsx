@@ -4,6 +4,8 @@ import axios from "axios";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import {Button, Container, Modal, Table} from "react-bootstrap";
 import {Form} from "formik";
+import Footer from "../components/Footer/footer.jsx";
+import Header from "../components/Header/header.jsx";
 
 
 const BookList = () => {
@@ -38,8 +40,11 @@ const BookList = () => {
 
     return (
         <div className="container py-4">
-            <h2>Quản Lý Sách</h2>
-            <Button variant="primary">Thêm Sách</Button>
+            <Header/>
+            <h2>TRANG CHỦ</h2>
+            <div className="d-flex justify-content-end">
+                <Button variant="primary">Thêm Sách</Button>
+            </div>
             <div className="d-flex justify-content-center mb-3 ">
                 <input
                     type="text"
@@ -50,6 +55,7 @@ const BookList = () => {
                 <button>
                     <i className="bi bi-search"></i>
                 </button>
+
             </div>
             <Table>
                 <thead>
@@ -72,7 +78,7 @@ const BookList = () => {
                         <td>{item.author}</td>
                         <td>{item.genre}</td>
                         <td>{item.year}</td>
-                        <td><img src={item.image} style={{width: '80px', height: '100px'}} /></td>
+                        <td><img src={item.image} style={{width: '80px', height: '100px'}}/></td>
                         <td>
                             {renderStars(item.rating)}
                         </td>
@@ -85,6 +91,7 @@ const BookList = () => {
                 ))}
                 </tbody>
             </Table>
+            <Footer/>
         </div>
     );
 };

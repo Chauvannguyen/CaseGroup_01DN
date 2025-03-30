@@ -25,8 +25,8 @@
       "genre": "Software Development",
       "year": 1999,
       "description": "A guide to software development best practices.",
-      "image": "https://example.com/pragmatic_programmer.jpg",
-      "rating": "5"
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVAw1znFA-r1xcquhztDHqqEc7QvRYc7q4LA&s",
+      "rating": "4"
     },
     {
       "id": 3,
@@ -35,7 +35,7 @@
       "genre": "Software Development",
       "year": 1999,
       "description": "A guide to software development best practices.",
-      "image": "https://example.com/pragmatic_programmer.jpg",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT38aOSOeMf0KyeWi9xVygswJkhtCvXzTPbBQ&s",
       "rating": "5"
     }
   ]

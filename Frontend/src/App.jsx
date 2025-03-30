@@ -1,17 +1,16 @@
 import React, { useState } from 'react'
-import {BrowserRouter, Route, Routes} from "react-router";
+import {Route, Routes} from "react-router";
 import BookList from "./Pages/BookList.jsx";
+import Login from "./Pages/Login.jsx";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<BookList />} />
-        </Routes>
-      </BrowserRouter>
+      <>
+          <Routes>
+              <Route path="/Login" element={<Login />}/>
+              <Route path="/" element={<BookList />} />
+          </Routes>
+      </>
   )
 }
-
 export default App
