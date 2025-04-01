@@ -6,17 +6,21 @@ import {Button, Container, Modal, Table} from "react-bootstrap";
 import {Form} from "formik";
 import Footer from "../components/Footer/footer.jsx";
 import Header from "../components/Header/header.jsx";
+import SearchBar from "../components/SearchBook/SearchBar.jsx";
 
 
 const BookList = () => {
     const [users, setUsers] = useState([]);
+    const [filteredUsers, setFilteredUsers] = useState([]);
+    const [error, setError] = useState(null);
 
-
-
-    useEffect(() =>{
+    useEffect(() => {
         axios
             .get('http://localhost:3000/books')
-            .then((reponse) => setUsers(reponse.data))
+            .then((response) => {
+                setUsers(response.data);
+                setFilteredUsers(response.data); // Khởi tạo mảng filteredUsers
+            })
             .catch((error) => {
                 if (error.code === 'ERR_NETWORK') {
                     setError('No Data')
@@ -37,6 +41,17 @@ const BookList = () => {
         return stars;
     };
 
+    const handleSearch = (searchTerm) => {
+        if (searchTerm.trim() === "") {
+            setFilteredUsers(users);
+        } else {
+            const filtered = users.filter(user =>
+                user.title.toLowerCase().startsWith(searchTerm.toLowerCase())
+            );
+            setFilteredUsers(filtered);
+        }
+    };
+
 
     return (
         <div className="container py-4">
@@ -45,18 +60,9 @@ const BookList = () => {
             <div className="d-flex justify-content-end">
                 <Button variant="primary">Thêm Sách</Button>
             </div>
-            <div className="d-flex justify-content-center mb-3 ">
-                <input
-                    type="text"
-                    placeholder="Tìm kiếm...!"
-                    className="w-75 "
 
-                />
-                <button>
-                    <i className="bi bi-search"></i>
-                </button>
+            <SearchBar onSearch={handleSearch} />
 
-            </div>
             <Table>
                 <thead>
                 <tr>
@@ -71,7 +77,7 @@ const BookList = () => {
                 </tr>
                 </thead>
                 <tbody>
-                {users.map((item, index) => (
+                {filteredUsers.map((item, index) => (
                     <tr key={index}>
                         <td>{item.id}</td>
                         <td>{item.title}</td>
@@ -95,4 +101,5 @@ const BookList = () => {
         </div>
     );
 };
+
 export default BookList;
