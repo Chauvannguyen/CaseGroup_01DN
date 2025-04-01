@@ -56,7 +56,7 @@ const BookList = () => {
     return (
         <div className="container py-4">
             <Header/>
-            <h2>TRANG CHỦ</h2>
+            <h2>Library Admin</h2>
             <div className="d-flex justify-content-end">
                 <Button variant="primary">Thêm Sách</Button>
             </div>
