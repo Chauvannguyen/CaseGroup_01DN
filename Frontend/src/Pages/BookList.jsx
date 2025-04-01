@@ -15,6 +15,7 @@ const BookList = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
+        // nhan du lieu
         axios
             .get('http://localhost:3000/books')
             .then((response) => {
