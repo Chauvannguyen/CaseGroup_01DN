@@ -7,6 +7,7 @@ import {Form} from "formik";
 import Footer from "../components/Footer/footer.jsx";
 import Header from "../components/Header/header.jsx";
 import SearchBar from "../components/SearchBook/SearchBar.jsx";
+import DeleteBook from "../components/DeleteBook/DeleteBook.jsx";
 
 
 const BookList = () => {
@@ -52,6 +53,33 @@ const BookList = () => {
         }
     };
 
+    const reassignIds = (books) => {
+        return books.map((book, index) => {
+            // Cập nhật lại ID của các sách còn lại
+            book.id = index + 1; // ID mới sẽ là vị trí của nó trong mảng
+            return book;
+        });
+    };
+
+    const handleDelete = (bookId) => {
+        // Xóa sách khỏi mảng filteredUsers và users
+        const updatedBooks = filteredUsers.filter(book => book.id !== bookId);
+        setFilteredUsers(updatedBooks);
+        setUsers(updatedBooks);
+
+        // Cập nhật lại ID cho các sách còn lại
+        const reAssignedBooks = reassignIds(updatedBooks);
+
+        // Cập nhật lại dữ liệu trong cơ sở dữ liệu (JSON Server)
+        reAssignedBooks.forEach((book) => {
+            axios.put(`http://localhost:3000/books/${book.id}`, book)
+                .catch((error) => {
+                    console.error("Error updating book ID:", error);
+                });
+        });
+    };
+
+
 
     return (
         <div className="container py-4">
@@ -90,7 +118,7 @@ const BookList = () => {
                         </td>
                         <td className="d-flex gap-1">
                             <Button variant="warning" size="sm">Sửa</Button>
-                            <Button variant="danger" size="sm">Xóa</Button>
+                            <DeleteBook bookId={item.id} onDelete={handleDelete} />
                             <Button variant="primary" size="sm">Chi tiết</Button>
                         </td>
                     </tr>
