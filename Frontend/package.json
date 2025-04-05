@@ -19,6 +19,7 @@
     "react-dom": "^19.0.0",
     "react-router": "^7.4.0",
     "react-router-dom": "^7.4.0",
+    "react-stars": "^2.2.5",
     "yup": "^1.6.1"
   },
   "devDependencies": {

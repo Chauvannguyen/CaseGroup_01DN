@@ -11,32 +11,79 @@
   "books": [
     {
       "id": 1,
-      "title": "Clean Code",
-      "author": "Robert C. Martin",
-      "genre": "Programming",
-      "year": 2008,
-      "image": "https://djc.vn/web/image/djc.news/441/image_1024?unique=eb2a788",
+      "title": "Kỹ thuật lập trình C",
+      "author": "Andrew Hunt, David Thomas",
+      "genre": "Software Development",
+      "year": "2015",
+      "description": "A guide to software development best practices.",
+      "image": "https://website-dev.hn.ss.bfcplatform.vn/x4si8_T_Ls_S_Zq5cy_XG_Hl_Il_M8w_Di_Su_J4_U_Bz_Bn_Z28_Z5m_L_Alpe4a_F_eaf2eeed4f.jpg",
       "rating": "3"
     },
     {
       "id": 2,
-      "title": "The Pragmatic Programmer",
+      "title": "Lập trình JAVA",
       "author": "Andrew Hunt, David Thomas",
       "genre": "Software Development",
       "year": 1999,
       "description": "A guide to software development best practices.",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVAw1znFA-r1xcquhztDHqqEc7QvRYc7q4LA&s",
+      "image": "https://img.vn.my-best.com/product_images/8dabf21adc7f9962b540b1ca4eb65b9e.png?ixlib=rails-4.3.1&q=70&lossless=0&w=800&h=800&fit=clip&s=de0cb4fb237d2253c862e5b7c05e14da",
       "rating": "4"
     },
     {
       "id": 3,
-      "title": "The Pragmatic Programmer",
+      "title": "Lập trình PHP & MySQL",
       "author": "Andrew Hunt, David Thomas",
       "genre": "Software Development",
       "year": 1999,
       "description": "A guide to software development best practices.",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT38aOSOeMf0KyeWi9xVygswJkhtCvXzTPbBQ&s",
+      "image": "https://cdn.codegym.vn/wp-content/uploads/2023/05/sach-lap-trinh-web-8.jpg",
       "rating": "5"
+    },
+    {
+      "id": 4,
+      "title": "100 Bài tập lập trình",
+      "author": "Andrew Hunt, David Thomas",
+      "genre": "Software Development",
+      "year": 1999,
+      "description": "A guide to software development best practices.",
+      "image": "https://zendvn.com/images/sachLapTrinh/UYEfVBswSa.png",
+      "rating": "5"
+    },
+    {
+      "title": "Giáo trình lập trình Android v1",
+      "author": "Nguyễn thọ thông",
+      "genre": "code",
+      "year": "2020",
+      "image": "https://zendvn.com/images/sachLapTrinh/UYEfVBswSa.png",
+      "rating": "5",
+      "id": 5
+    },
+    {
+      "title": "Giáo trình lập trình Android v2",
+      "author": "Nguyễn thọ thông",
+      "genre": "code",
+      "year": "2020",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU7QZEPv7uhyvKJWTL2yzaQq6u4v6hoyZLxQ&s",
+      "rating": "5",
+      "id": 6
+    },
+    {
+      "title": "Kiến thức nghề lập trình",
+      "author": "Nguyễn thọ thông",
+      "genre": "code",
+      "year": "2020",
+      "image": "https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lfum5e0whx0q98",
+      "rating": "5",
+      "id": 7
+    },
+    {
+      "title": "Cleam Code",
+      "author": "Chau van nguyen",
+      "genre": "code",
+      "year": "2025",
+      "image": "https://website-dev.hn.ss.bfcplatform.vn/BHK_89b5_FOUAE_6a_Iob_Spzvf_Mt_A_Ec_Ym1i6_V_Jr_I1_Tkl_Bb_H_Ag_Iq_F_36a944a1d1.jpg",
+      "rating": "4",
+      "id": 8
     }
   ]
 }

@@ -33,7 +33,8 @@ const Home = () => {
                             <Card.Body>
                                 <Card.Title>{book.title}</Card.Title>
                                 <Card.Text>Tác giả: {book.author}</Card.Text>
-                                <Button variant="primary">Xem chi tiết</Button>
+                                <Button variant="primary"
+                                >Xem chi tiết</Button>
                             </Card.Body>
                         </Card>
                     </div>

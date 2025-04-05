@@ -4,14 +4,10 @@ import { Button, Table } from "react-bootstrap";
 import Footer from "../components/Footer/footer.jsx";
 import Header from "../components/Header/header.jsx";
 import SearchBar from "../components/SearchBook/SearchBar.jsx";
-<<<<<<< HEAD
 import DeleteBook from "../components/DeleteBook/DeleteBook.jsx";
-
-=======
 import AddBook from "../components/Function/AddBook.jsx";
 import EditBook from "../components/Function/EditBook.jsx";
 import Detail from "../components/Function/Detail.jsx";
->>>>>>> acaea8efda0b72826a7dc4efe4ac268811ed8908
 
 const BookList = () => {
     const [users, setUsers] = useState([]);
@@ -41,13 +37,12 @@ const BookList = () => {
         const stars = [];
         for (let i = 1; i <= 5; i++) {
             stars.push(
-                <i
-                    key={i}
-                    className={`bi ${i <= rating ? "bi-star-fill" : "bi-star"} text-warning`}
-                ></i>
+                <span key={i} style={{ color: i <= rating ? '#ffd700' : '#ccc' }}>
+                ★
+            </span>
             );
         }
-        return stars;
+        return <div>{stars}</div>;
     };
 
     const handleSearch = (searchTerm) => {
@@ -61,25 +56,23 @@ const BookList = () => {
         }
     };
 
-<<<<<<< HEAD
     const reassignIds = (books) => {
         return books.map((book, index) => {
-            // Cập nhật lại ID của các sách còn lại
-            book.id = index + 1; // ID mới sẽ là vị trí của nó trong mảng
+            book.id = index + 1;
             return book;
         });
     };
 
     const handleDelete = (bookId) => {
-        // Xóa sách khỏi mảng filteredUsers và users
+
         const updatedBooks = filteredUsers.filter(book => book.id !== bookId);
         setFilteredUsers(updatedBooks);
         setUsers(updatedBooks);
 
-        // Cập nhật lại ID cho các sách còn lại
+
         const reAssignedBooks = reassignIds(updatedBooks);
 
-        // Cập nhật lại dữ liệu trong cơ sở dữ liệu (JSON Server)
+
         reAssignedBooks.forEach((book) => {
             axios.put(`http://localhost:3000/books/${book.id}`, book)
                 .catch((error) => {
@@ -126,17 +119,15 @@ const BookList = () => {
                 </Button>
             </div>
 
-            {/* Modal thêm sách */}
             <AddBook
                 onBookAdded={handleBookAdded}
                 show={showAddBookModal}
                 setShow={setShowAddBookModal}
             />
 
-            {/* Thanh tìm kiếm */}
             <SearchBar onSearch={handleSearch} />
 
-            {/* Bảng danh sách sách */}
+
             <Table>
                 <thead>
                 <tr>
@@ -161,19 +152,13 @@ const BookList = () => {
                         <td><img src={item.image} style={{ width: '80px', height: '100px' }} alt="book" /></td>
                         <td>{renderStars(item.rating)}</td>
                         <td className="d-flex gap-1">
-<<<<<<< HEAD
-                            <Button variant="warning" size="sm">Sửa</Button>
-                            <DeleteBook bookId={item.id} onDelete={handleDelete} />
-                            <Button variant="primary" size="sm">Chi tiết</Button>
-
                             <Button variant="warning" size="sm" onClick={() => handleEditBook(item)}>
                                 Sửa
                             </Button>
-                            <Button variant="danger" size="sm">Xóa</Button>
                             <Button variant="primary" size="sm" onClick={() => handleViewDetails(item)}>
                                 Chi tiết
                             </Button>
-
+                            <DeleteBook bookId={item.id} onDelete={handleDelete} />
                         </td>
                     </tr>
                 ))}

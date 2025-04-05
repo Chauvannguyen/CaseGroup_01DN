@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
+import axios from "axios";
 
 const AddBook = ({ show, setShow, onBookAdded }) => {
     const [book, setBook] = useState({
@@ -20,8 +21,16 @@ const AddBook = ({ show, setShow, onBookAdded }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        onBookAdded(book); // Gọi hàm thêm sách
-        handleClose();
+
+        // Gửi yêu cầu POST tới JSON Server
+        axios.post('http://localhost:3000/books', book)
+            .then(response => {
+                onBookAdded(book); // Thêm sách vào state React sau khi thêm vào DB
+                handleClose(); // Đóng modal
+            })
+            .catch(error => {
+                console.error("Đã xảy ra lỗi khi thêm sách:", error);
+            });
     };
 
     return (

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
+import axios from "axios";
 
 const EditBook = ({ show, setShow, bookToEdit, onBookUpdated }) => {
     const [title, setTitle] = useState('');
@@ -27,8 +28,18 @@ const EditBook = ({ show, setShow, bookToEdit, onBookUpdated }) => {
             year,
             rating,
         };
-        onBookUpdated(updatedBook);
-        setShow(false); // Đóng modal sau khi cập nhật
+
+        // Gửi yêu cầu PATCH để cập nhật sách trong db.json
+        axios
+            .patch(`http://localhost:3000/books/${updatedBook.id}`, updatedBook)
+            .then((response) => {
+                // Sau khi cập nhật thành công, gọi onBookUpdated để cập nhật trong state
+                onBookUpdated(updatedBook);
+                setShow(false); // Đóng modal sau khi cập nhật
+            })
+            .catch((error) => {
+                console.error('Lỗi khi cập nhật sách:', error);
+            });
     };
 
     if (!bookToEdit) {

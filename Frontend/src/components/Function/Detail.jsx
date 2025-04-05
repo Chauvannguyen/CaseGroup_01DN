@@ -34,18 +34,16 @@ const BookDetail = ({ show, setShow, book }) => {
     );
 };
 
-// Render function for stars
 const renderStars = (rating) => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
         stars.push(
-            <i
-                key={i}
-                className={`bi ${i <= rating ? "bi-star-fill" : "bi-star"} text-warning`}
-            ></i>
+            <span key={i} style={{ color: i <= rating ? '#ffd700' : '#ccc' }}>
+                ★
+            </span>
         );
     }
-    return stars;
+    return <div>{stars}</div>;
 };
 
 export default BookDetail;
